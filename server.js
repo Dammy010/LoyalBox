@@ -10,7 +10,9 @@ connectDB();
 
 const app = express();
 app.use(express.json());
-
+app.use("/", (req,res) => {
+    res.send("Welcome to my backend")
+})
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
